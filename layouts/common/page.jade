@@ -1,0 +1,31 @@
+
+doctype html
+html
+  head
+    title Magnify
+    link(rel='stylesheet', href='/styles/global.css')
+  body
+    if nosidebar
+      nosidebar
+    .wrapper
+      .stripe
+      header
+        img.header-icon(src='/images/ic_appicon.svg', alt='M', width=32)
+        span.title--text 
+          a(href='/') Magnify
+          span.page-title &nbsp;#{title}
+      if !nosidebar
+        section.sidebar
+          nav
+            ul
+              each task in locals.sidebar
+                li
+                  a(href=`/${task.name}`)= task.fancyName
+                  if task.children
+                    each subtask in task.children
+                      ul
+                        li
+                          - path = `${task.name}/${subtask.name}`
+                          a(href=path)= subtask.fancyName
+      section.content
+        block content

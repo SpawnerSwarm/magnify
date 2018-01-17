@@ -1,0 +1,21 @@
+
+doctype html
+extends ../layouts/common/page
+
+block content
+  style .block * {margin: 10px; display: block;} .focus { width: 500px; height: 500px; margin: 10px; float: right; }
+  main
+    h1 #{title}
+    .block(style='position: absolute;')
+      button BUTTON
+      button.no-shadow BUTTON
+      button.error BUTTON
+      button.secondary BUTTON
+      button.secondary.no-round BUTTON
+      button.no-round BUTTON
+      button.no-shadow.no-round BUTTON
+    .focus
+    .focus.block
+      button.x4 BUTTON
+      button.secondary.x4 BUTTON
+      button.error.x4 BUTTON

@@ -1,0 +1,57 @@
+=borderbtn($color)
+    background:             transparent
+    border:                 1px solid $color
+    box-shadow:             none
+    color:                  $color
+
+=stdbtn($color)
+    background:             $color
+    border:                 0
+    color:                  $light
+
+    &:not(.no-shadow)
+        &:not(.noshadow)
+            box-shadow:     0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12)
+
+            &:active,
+            &:hover
+                box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .2)
+
+button,
+.button
+    cursor:                 pointer
+    font-size:              14px
+    font-weight:            500
+    height:                 36px
+    letter-spacing:         0
+    line-height:            36px
+    min-width:              64px
+    outline:                none
+    overflow:               hidden
+    padding:                0 16px
+    text-align:             center
+    text-decoration:        none
+    text-transform:         uppercase
+    transition:             box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1)
+    vertical-align:         middle
+    will-change:            box-shadow
+
+    &.secondary
+        +borderbtn          ($logo1)
+
+    &:not(.secondary)
+        &:not(.error)
+            +stdbtn         ($gradient)
+
+    &:not(.no-round)
+        &:not(.noround)
+            border-radius:  2px
+
+    &.error
+        +stdbtn             ($error)
+    
+    &.x4
+        font-size:          56px
+        height:             144px
+        min-width:          288px
+        padding:            0 64px

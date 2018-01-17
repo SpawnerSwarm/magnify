@@ -1,0 +1,13 @@
+doctype html
+extends ../../layouts/common/page
+
+block content
+  link(rel='stylesheet', type='text/css', href='/swarmbot/styles/console.css')
+  main.center
+    h1 Console
+    section.console.focus
+    aside.buttons
+      a(href='json/download')
+        button Export to JSON
+      a(href='text/download')
+        button Export to Text

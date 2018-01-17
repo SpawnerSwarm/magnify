@@ -1,0 +1,15 @@
+.console {
+    margin-top:     10px;
+    margin-left:    90px;
+    margin-right:   90px;
+    margin-bottom:  25px;
+}
+
+.buttons {
+    grid-column:    3 / 4;
+    grid-row:       4 / 5
+}
+
+.buttons button:first-child {
+    margin-right:   40px;
+}
